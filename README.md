@@ -19,9 +19,10 @@ docker ps
 ```
 ## Zabbix Agents Configuration
 1. Install the Agent
+
 Select your system from here :
 https://www.zabbix.com/download
-2. Locate the zabbix_agentd.conf File
+3. Locate the zabbix_agentd.conf File
 * Linux
 ```git
 /etc/zabbix/zabbix_agentd.conf
