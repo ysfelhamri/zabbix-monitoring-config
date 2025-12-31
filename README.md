@@ -22,7 +22,8 @@ docker ps
 
 Select your system from here :
 https://www.zabbix.com/download
-3. Locate the zabbix_agentd.conf File
+
+2. Locate the zabbix_agentd.conf File
 * Linux
 ```git
 /etc/zabbix/zabbix_agentd.conf
@@ -31,18 +32,18 @@ https://www.zabbix.com/download
 ```git
 C:\Program files\Zabbix Agent\zabbix_agentd.conf
 ```
-4. Set the IP Address of the Zabbix Server in the zabbix_agentd.conf File
+3. Set the IP Address of the Zabbix Server in the zabbix_agentd.conf File
 ```git
 Server=<Zabbix_Server_IP>
 ```
 ```git
 ServerActive=<Zabbix_Server_IP>
 ```
-5. Set the Agent Name in the zabbix_agentd.conf File
+4. Set the Agent Name in the zabbix_agentd.conf File
 ```git
 Hostname=<Agent_Name>
 ```
-6. Restart the Zabbix Agent Service
+5. Restart the Zabbix Agent Service
 
 * Linux
 ```git
