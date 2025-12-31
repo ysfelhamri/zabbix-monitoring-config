@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: zabbix
+  zabbix-server-pgsql:
+    image: zabbix/zabbix-server-pgsql
+    depends_on:
+      - postgres
+    environment:
+      DB_SERVER_HOST: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD : admin
+  zabbix-web-pgsql:
+    image: zabbix/zabbix-web-nginx-pgsql
+    depends_on:
+      - postgres
+      - zabbix-server-pgsql
+    environment:
+      ZBX_SERVER_HOST: zabbix-server-pgsql
+      DB_SERVER_HOST: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD : admin
+      PHP_TZ: Europe/London
+    ports:
+      - "80:8080"
